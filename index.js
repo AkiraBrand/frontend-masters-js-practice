@@ -16,18 +16,12 @@ class Bookshelf {
   }
 }
 
+///this is OUTSIDE THE BOOKSHELF CLASS
+
 function loadBooks(bookshelf) {
-	fakeAjax(BOOK_API,function onBooks(bookNames){
-		for (let bookName of bookNames) {
-			bookshelf.addFavoriteBook(bookName);
-		}
-		bookshelf.printFavoriteBooks();
-	});
 }
 
 var BOOK_API = "https://some.url/api";
-var myBooks = new Bookshelf();
-loadBooks(myBooks);
 
 // NOTE: don't modify this function at all
 function fakeAjax(url,cb) {
@@ -41,10 +35,6 @@ function fakeAjax(url,cb) {
 		]);
 	},500);
 }
-
-var myBooks = new Bookshelf();
-loadBooks(myBooks);
-
 
 var bookshelf = new Bookshelf();
 bookshelf.addFavoriteBook("The Shining");
