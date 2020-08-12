@@ -16,8 +16,6 @@ class Bookshelf {
   }
 }
 
-///this is OUTSIDE THE BOOKSHELF CLASS
-
 function loadBooks(bookshelf) {
   fakeAjax(BOOK_API, function getBooks(bookNames) {
     for(let bookName of bookNames) {
@@ -29,7 +27,6 @@ function loadBooks(bookshelf) {
 
 var BOOK_API = "https://some.url/api";
 
-// NOTE: don't modify this function at all
 function fakeAjax(url,cb) {
 	setTimeout(function fakeLoadingDelay(){
 		cb([
