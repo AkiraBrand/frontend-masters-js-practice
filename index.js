@@ -19,12 +19,12 @@ class Bookshelf {
 ///this is OUTSIDE THE BOOKSHELF CLASS
 
 function loadBooks(bookshelf) {
-  fakeAjax(BOOK_API, function getBooks(bookNames){
-  for (let bookName of bookNames) {
-    bookshelf.addFavoriteBook(bookName);
-  }
-  bookshelf.printFavoriteBooks();
-  });
+  fakeAjax(BOOK_API, function getBooks(bookNames) {
+    for(let bookName of bookNames) {
+        bookshelf.addFavoriteBook(bookName);
+    }
+    bookshelf.printFavoriteBooks();
+  })
 }
 
 var BOOK_API = "https://some.url/api";
