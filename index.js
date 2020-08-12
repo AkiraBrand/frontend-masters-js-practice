@@ -20,15 +20,13 @@ class Bookshelf {
 
 function loadBooks(bookshelf) {
   //inline function here
+ // `loadBooks(..)` should call the provided `fakeAjax(..)`, using `BOOK_API` as the URL and an inline function expression as the callback.
   //passed an array-> bookNames
-  fakeAjax(BOOK_API,function onBooks(bookNames){
-    //loop array 
-    for (let bookName of bookNames) {
-      //use the bookshelf object, call the addFavoriteBook method on it, pass it the bookName inside the bookNames array 
-      bookshelf.addFavoriteBook(bookName);
-    }
-    // call the printfavebooks method on the bookshelf object
-    bookshelf.printFavoriteBooks();
+  fakeAjax(BOOK_API,function getBooks(bookNames){
+    for(let bookName of bookNames) {
+    bookshelf.addFavoriteBook(bookName);
+  }
+  bookshelf.printFavoriteBooks();
   });
 }
 
